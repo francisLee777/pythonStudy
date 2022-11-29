@@ -4,7 +4,8 @@
 str = """123
 456"""
 
-print(str, "\n name:%s, age:%d" % ("haoyu", 25))
+print(str, "\n name:%s, age:%d" % ("haoyu", 25),
+      "*".join(["1", "2", "3"]), " asd ".strip().find("s"))
 
 # 列表
 list1 = [1, "hello", (4, 5), {"a": 4}]
@@ -19,7 +20,10 @@ print("定位方法: ", list1.index((4, 5)), "计数：", list1.count(9.9))
 
 # 统一遍历方法
 for index, item in enumerate(list1):
-    print(index, item, type(item))
+    if index >= 1 and index < 3:
+        print(index, item, type(item))
+    else:
+        print(index, item, type(item))
 
 
 # tuple   元组， 不可更改
@@ -31,3 +35,8 @@ del (dic["2"])
 for key in dic:
     print("key:", key, "value", dic[key])
 print(type(dic.keys()), dic.values())
+
+
+# 函数， 参数的默认值
+def addFun(a, b=10):
+    return a+b
